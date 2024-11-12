@@ -110,7 +110,7 @@ The presented code implements a sophisticated deep learning architecture designe
 The raw sensor data undergoes extensive preprocessing to enhance the model's learning capabilities. The temporal data is structured with timestamps and binary fault labels, where -99 indicates a fault occurrence (converted to 1) and 0 represents normal operation. The feature space comprises 15 primary sensor measurements including current, voltage, and power metrics.
 
 Feature engineering involves the creation of rolling statistics with a window size of 5, including:
-- Moving averages: \[ $MA(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} x_i$ \]
+- Moving averages: $$MA(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} x_i$$
 - Rolling standard deviation: $$\sigma(t) = \sqrt{\frac{1}{w-1}\sum_{i=t-w+1}^{t} (x_i - \mu)^2}$$
 - Rate of change: $$\Delta x(t) = x_t - x_{t-1}$$
 - Moving variance and median calculations
@@ -172,6 +172,33 @@ Performance evaluation includes multiple metrics:
 
 The model implements early stopping and learning rate reduction strategies to prevent overfitting and optimize convergence. The validation process uses a split ratio of 0.2, with stratification to maintain class distribution.
 
+# TEST
+### Displayed Mathematics Example
+
+The quadratic formula is used to find the roots of a quadratic equation \(ax^2 + bx + c = 0\), and it is given by
+\[
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\]
+
+### A System of Equations
+
+Using the `align` environment for a system of equations:
+\begin{align}
+  3x + 4y &= 5 \\
+  2x - 3y &= -1
+\end{align}
+
+(Note: The `align` environment requires the `amsmath` package.)
+
+### Matrix Representation
+
+A simple matrix can be represented as follows:
+\[
+A = \begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}
+\]
 
 
 
