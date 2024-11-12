@@ -6,9 +6,9 @@
 |---------|-----------|--------|--------|------------|-------------|
 | timestamp | datetime64[ns] | ISO8601 UTC<br>YYYY-MM-DD HH:mm:ss.fff+00:00 | Start: 2024-09-05 03:01:51.554<br>End: 2024-10-16 05:35:50.81 | 1 millisecond | 4660000 |
 
-## Training Set Specifications
+## Test Set Specifications
 
-| Feature | Data Type | Format | Range | Resolution | Description |
+| Feature | Data Type | Format | Range | Resolution | No of Samples |
 |---------|-----------|--------|--------|------------|-------------|
 | timestamp | datetime64[ns] | ISO8601 UTC<br>YYYY-MM-DD HH:mm:ss.fff+00:00 | Start: 2024-10-22 02:54:30.877<br>End: 2024-10-23 08:22:11.987 | 1 millisecond | 167000 |
 
