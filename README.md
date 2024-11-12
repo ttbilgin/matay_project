@@ -116,11 +116,13 @@ MA(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} x_i
 $$
 
 Rolling standard deviation:
+
 $$
 \sigma(t) = \sqrt{\frac{1}{w-1}\sum_{i=t-w+1}^{t} (x_i - \mu)^2}
 $$
 
 Rate of change:
+
 $$
 \Delta x(t) = x_t - x_{t-1}
 $$
@@ -128,6 +130,7 @@ $$
 Moving variance and median calculations
 
 Data normalization is performed using RobustScaler to handle outliers effectively, following the transformation:
+
 $$
 x_{scaled} = \frac{x - Q_1}{Q_3 - Q_1}
 $$
@@ -142,6 +145,7 @@ The model architecture consists of multiple specialized layers:
 
 ### Convolutional Layers
 Two 1D convolutional layers process the input sequences:
+
 $$
 Conv1D_1(x) = \sigma(W_1 * x + b_1)
 $$
@@ -151,12 +155,14 @@ Conv1D_2(x) = \sigma(W_2 * Conv1D_1(x) + b_2)
 $$
 
 where * denotes the convolution operation and σ represents the ReLU activation function:
+
 $$
 \sigma(x) = max(0, x)
 $$
 
 ### Bidirectional LSTM Layers
 The BiLSTM layers process the sequence in both forward and backward directions:
+
 $$
 \vec{h_t} = LSTM_{forward}(x_t, \vec{h_{t-1}})
 $$
@@ -166,12 +172,14 @@ $$
 $$
 
 The final output combines both directions:
+
 $$
 h_t = [\vec{h_t}, \overleftarrow{h_t}]
 $$
 
 ### Dense Layers and Regularization
 Each dense layer applies the transformation:
+
 $$
 z_l = W_l h_{l-1} + b_l
 $$
@@ -181,17 +189,20 @@ h_l = \sigma(LayerNorm(z_l))
 $$
 
 Layer normalization is applied as:
+
 $$
 LayerNorm(x) = \gamma \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} + \beta
 $$
 
 Dropout is implemented with probabilities of 0.2 and 0.3 for different layers:
+
 $$
 h_{dropped} = h \odot Bernoulli(p)
 $$
 
 ## Loss Function and Training
 The custom loss function incorporates class weights and confidence penalties:
+
 $$
 L(y, \hat{y}) = BCE(y, \hat{y}) \cdot w(y) \cdot c(\|y - \hat{y}\|)
 $$
@@ -201,11 +212,13 @@ where BCE is binary cross-entropy, w(y) is the class weight function, and c(x) i
 The Adam optimizer is utilized with the following parameters:
 
 Learning rate:
+
 $$
 \alpha = 0.001
 $$
 
 Exponential decay rates:
+
 $$
 \beta_1 = 0.9
 $$
@@ -215,6 +228,7 @@ $$
 $$
 
 Epsilon:
+
 $$
 \epsilon = 10^{-7}
 $$
