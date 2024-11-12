@@ -1,10 +1,10 @@
 # Temporal Information Analysis
 
-## Timestamp Specifications
+## Training Set Specifications
 
 | Feature | Data Type | Format | Range | Resolution | Description |
 |---------|-----------|--------|--------|------------|-------------|
-| timestamp | datetime64[ns] | ISO8601 UTC<br>YYYY-MM-DD HH:mm:ss.fff+00:00 | Start: 2024-08-03 12:41:26.753<br>End: 2024-08-03 12:42:23.875 | 1 millisecond | High-precision timestamp for each measurement |
+| timestamp | datetime64[ns] | ISO8601 UTC<br>YYYY-MM-DD HH:mm:ss.fff+00:00 | Start: 2024-09-05 03:01:51.554<br>End: 2024-10-16 05:35:50.81 | 1 millisecond | High-precision timestamp for each measurement |
 
 ## Temporal Characteristics
 
