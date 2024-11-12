@@ -2,17 +2,17 @@
 
 ## Training Set Specifications
 
+| Feature | Data Type | Format | Range | Resolution | No of Samples |
+|---------|-----------|--------|--------|------------|-------------|
+| timestamp | datetime64[ns] | ISO8601 UTC<br>YYYY-MM-DD HH:mm:ss.fff+00:00 | Start: 2024-09-05 03:01:51.554<br>End: 2024-10-16 05:35:50.81 | 1 millisecond | 4660000 |
+
+## Training Set Specifications
+
 | Feature | Data Type | Format | Range | Resolution | Description |
 |---------|-----------|--------|--------|------------|-------------|
-| timestamp | datetime64[ns] | ISO8601 UTC<br>YYYY-MM-DD HH:mm:ss.fff+00:00 | Start: 2024-09-05 03:01:51.554<br>End: 2024-10-16 05:35:50.81 | 1 millisecond | High-precision timestamp for each measurement |
+| timestamp | datetime64[ns] | ISO8601 UTC<br>YYYY-MM-DD HH:mm:ss.fff+00:00 | Start: 2024-10-22 02:54:30.877<br>End: 2024-10-23 08:22:11.987 | 1 millisecond | 167000 |
 
 ## Temporal Characteristics
-
-### Date Range Coverage
-- **Start Date**: August 3rd, 2024, 12:41:26.753 UTC
-- **End Date**: August 3rd, 2024, 12:42:23.875 UTC
-- **Total Duration**: Approximately 57.122 seconds
-- **Number of Samples**: Multiple readings per second
 
 ### Sampling Pattern Analysis
 - **Minimum Time Delta**: 1 millisecond
