@@ -110,6 +110,7 @@ The raw sensor data undergoes extensive preprocessing to enhance the model's lea
 Feature engineering involves the creation of rolling statistics with a window size of 5, including:
 
 Moving averages:
+
 $$
 MA(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} x_i
 $$
