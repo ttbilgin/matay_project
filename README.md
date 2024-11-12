@@ -180,11 +180,13 @@ The model implements early stopping and learning rate reduction strategies to pr
 # Comprehensive Dataset Description for Robotic Welding Process
 
 ## Temporal Information
+
 | Feature | Data Type | Format/Range | Description |
 |---------|-----------|--------------|-------------|
 | timestamp | datetime64[ns] | ISO8601 UTC | High-precision timestamp capturing the exact moment of measurement, essential for temporal analysis and sequence modeling |
 
 ## Current Measurements
+
 | Feature | Data Type | Range | Unit | Purpose & Description |
 |---------|-----------|--------|------|---------------------|
 | Current L1 | float64 | 0.0 - 5.0 | A | Line 1 current measurement. Monitors the current flow in phase 1 of the welding circuit. Critical for detecting phase imbalances and overload conditions |
@@ -194,6 +196,7 @@ The model implements early stopping and learning rate reduction strategies to pr
 | Neutral Current | float64 | 0.0 - 2.0 | A | Current in the neutral conductor. Should be minimal in balanced systems. High values indicate potential phase imbalance or harmonics |
 
 ## Voltage Measurements
+
 | Feature | Data Type | Range | Unit | Purpose & Description |
 |---------|-----------|--------|------|---------------------|
 | Voltage L1-L2 | float64 | 380.0 - 420.0 | V | Line voltage between phases 1 and 2. Critical for monitoring power quality and phase-to-phase voltage stability |
@@ -205,6 +208,7 @@ The model implements early stopping and learning rate reduction strategies to pr
 | Voltage Unbalance | float64 | 0.0 - 5.0 | % | Percentage of voltage imbalance between phases. Calculated as: $$\frac{max(|V_1-V_2|,|V_2-V_3|,|V_3-V_1|)}{V_{avg}} \times 100$$ |
 
 ## Power Measurements
+
 | Feature | Data Type | Range | Unit | Purpose & Description |
 |---------|-----------|--------|------|---------------------|
 | ΣActive Power | float64 | 0.0 - 100.0 | kW | Total real power consumption. Represents actual work being done. Calculated as: $$P = \sum_{i=1}^3 V_i I_i \cos(\phi_i)$$ |
@@ -213,12 +217,14 @@ The model implements early stopping and learning rate reduction strategies to pr
 | ΣPower Factor | float64 | -1.0 to 1.0 | - | Ratio of active to apparent power. Calculated as: $$PF = \frac{P}{S}$$ Indicates energy efficiency |
 
 ## Energy Measurements
+
 | Feature | Data Type | Range | Unit | Purpose & Description |
 |---------|-----------|--------|------|---------------------|
 | Total Consumed Energy | float64 | ≥ 0.0 | kWh | Cumulative active energy consumption. Integral of active power over time: $$E = \int P dt$$ |
 | Total Consumed Reactive Energy | float64 | ≥ 0.0 | kVArh | Cumulative reactive energy. Integral of reactive power over time: $$E_r = \int Q dt$$ |
 
 ## System Parameters
+
 | Feature | Data Type | Range | Unit | Purpose & Description |
 |---------|-----------|--------|------|---------------------|
 | Measured Frequency | float64 | 49.5 - 50.5 | Hz | Power system frequency. Critical for system stability monitoring. Should remain close to nominal value (50 Hz) |
@@ -227,6 +233,7 @@ The model implements early stopping and learning rate reduction strategies to pr
 ## Derived Metrics and Calculations
 
 ### Power Quality Indicators
+
 The dataset enables calculation of several important power quality metrics:
 
 Total Harmonic Distortion (THD):
@@ -236,18 +243,21 @@ Phase Unbalance Factor:
 $$\text{Unbalance}_{\text{phase}} = \frac{\text{max deviation from average}}{\text{average}} \times 100\%$$
 
 ### Energy Efficiency Metrics
+
 Overall system efficiency can be monitored through:
 
 Power Factor Quality:
 $$PF_{\text{quality}} = \frac{\text{Active Power}}{\sqrt{(\text{Active Power})^2 + (\text{Reactive Power})^2}}$$
 
 ## Data Quality Considerations
+
 - Sampling Rate: 1 millisecond resolution
 - Missing Values: Handled through forward and backward filling
 - Outlier Detection: Based on physical constraints and statistical analysis
 - Signal Noise: Typical industrial environment noise levels present
 
 ## Operational Context
+
 The dataset captures the complete electrical characteristics of a robotic welding process, enabling:
 - Real-time monitoring of welding quality
 - Predictive maintenance through pattern analysis
