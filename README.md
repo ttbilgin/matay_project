@@ -110,7 +110,7 @@ The presented code implements a sophisticated deep learning architecture designe
 The raw sensor data undergoes extensive preprocessing to enhance the model's learning capabilities. The temporal data is structured with timestamps and binary fault labels, where -99 indicates a fault occurrence (converted to 1) and 0 represents normal operation. The feature space comprises 15 primary sensor measurements including current, voltage, and power metrics.
 
 Feature engineering involves the creation of rolling statistics with a window size of 5, including:
-- Moving averages: $MA(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} x_i$
+- Moving averages: \[ $MA(t) = \frac{1}{w}\sum_{i=t-w+1}^{t} x_i$ \]
 - Rolling standard deviation: $$\sigma(t) = \sqrt{\frac{1}{w-1}\sum_{i=t-w+1}^{t} (x_i - \mu)^2}$$
 - Rate of change: $$\Delta x(t) = x_t - x_{t-1}$$
 - Moving variance and median calculations
