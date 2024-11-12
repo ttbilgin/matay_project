@@ -172,34 +172,6 @@ Performance evaluation includes multiple metrics:
 
 The model implements early stopping and learning rate reduction strategies to prevent overfitting and optimize convergence. The validation process uses a split ratio of 0.2, with stratification to maintain class distribution.
 
-# TEST
-### Displayed Mathematics Example
-
-The quadratic formula is used to find the roots of a quadratic equation \(ax^2 + bx + c = 0\), and it is given by
-\[
-x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
-\]
-
-### A System of Equations
-
-Using the `align` environment for a system of equations:
-\begin{align}
-  3x + 4y &= 5 \\
-  2x - 3y &= -1
-\end{align}
-
-(Note: The `align` environment requires the `amsmath` package.)
-
-### Matrix Representation
-
-A simple matrix can be represented as follows:
-\[
-A = \begin{pmatrix}
-  a & b \\
-  c & d
-\end{pmatrix}
-\]
-
 
 
 
