@@ -51,6 +51,8 @@ flowchart TB
     end
 
 ```
+
+
 ## NN Architecture
 
 ```mermaid
@@ -95,6 +97,8 @@ graph TD
     style D1 fill:#fbf,stroke:#333,stroke-width:2px
     style D2 fill:#fbf,stroke:#333,stroke-width:2px
 ```
+
+
 
 
 # Deep Learning Architecture for Welding Fault Detection
@@ -167,6 +171,11 @@ Performance evaluation includes multiple metrics:
 - Classification report with precision, recall, and F1-score
 
 The model implements early stopping and learning rate reduction strategies to prevent overfitting and optimize convergence. The validation process uses a split ratio of 0.2, with stratification to maintain class distribution.
+
+
+
+
+
 
 # Comprehensive Dataset Description for Robotic Welding Process
 
