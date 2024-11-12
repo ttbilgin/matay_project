@@ -2,6 +2,8 @@
 
 projeyi çalıştırmak için train ve test datasetlerini Colab'a upload edin ve MatayV2.ipynb dosyasındaki kodları çalıştırın
 
+## Akış Diyagramı
+
 ```mermaid
 flowchart TB
     subgraph Data_Preparation["Veri Hazırlama"]
@@ -48,4 +50,48 @@ flowchart TB
         O1 & O2 & O3 --> P[Final Model]
     end
 
+```
+## NN Architecture
+
+```mermaid
+graph TD
+    subgraph Input["Input Layer"]
+        A["Input Sequence<br>(20 timesteps × N features)"]
+    end
+
+    subgraph CNN["Convolutional Layers"]
+        B1["Conv1D Layer 1<br>32 filters, kernel=3<br>+ LayerNorm<br>+ Dropout(0.2)"]
+        B2["Conv1D Layer 2<br>64 filters, kernel=3<br>+ LayerNorm<br>+ Dropout(0.2)"]
+    end
+
+    subgraph LSTM["Bidirectional LSTM Layers"]
+        C1["Bidirectional LSTM 1<br>64 units<br>+ LayerNorm<br>+ Dropout(0.3)"]
+        C2["Bidirectional LSTM 2<br>32 units<br>+ LayerNorm<br>+ Dropout(0.3)"]
+    end
+
+    subgraph Dense["Dense Layers"]
+        D1["Dense Layer 1<br>64 units<br>ReLU<br>+ LayerNorm<br>+ Dropout(0.2)"]
+        D2["Dense Layer 2<br>32 units<br>ReLU<br>+ LayerNorm<br>+ Dropout(0.2)"]
+    end
+
+    subgraph Output["Output Layer"]
+        E["Dense Layer<br>1 unit<br>Sigmoid"]
+    end
+
+    A --> B1
+    B1 --> B2
+    B2 --> C1
+    C1 --> C2
+    C2 --> D1
+    D1 --> D2
+    D2 --> E
+
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style E fill:#f96,stroke:#333,stroke-width:4px
+    style B1 fill:#bbf,stroke:#333,stroke-width:2px
+    style B2 fill:#bbf,stroke:#333,stroke-width:2px
+    style C1 fill:#bfb,stroke:#333,stroke-width:2px
+    style C2 fill:#bfb,stroke:#333,stroke-width:2px
+    style D1 fill:#fbf,stroke:#333,stroke-width:2px
+    style D2 fill:#fbf,stroke:#333,stroke-width:2px
 ```
